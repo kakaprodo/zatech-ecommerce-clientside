@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Config from '../../utility/config';
+import RouteName from '../../utility/route-names';
 
 const GuestNav = () => {
     return (
@@ -11,9 +13,9 @@ const GuestNav = () => {
                     </span>
                 </div>
                 <div className="flex-none ">
-                    <button className="btn btn-primary mx-5">
+                    <Link to={RouteName.LOGIN} className="btn btn-primary mx-2 btn-sm">
                         Login
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

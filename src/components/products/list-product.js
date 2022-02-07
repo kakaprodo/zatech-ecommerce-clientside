@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import RouteName from '../../utility/route-names';
 
 const ListProduct = () => {
 
@@ -42,7 +44,7 @@ const ListProduct = () => {
                                 <p>{product.price}$</p>
                                 <p>{product.discount}% of Discount</p>
                                 <div className="my-3">
-                                    <button className="btn btn-primary btn-sm btn-outline">Purchase</button>
+                                    <Link to={RouteName.SINGLE_PRODUCT} className="btn btn-primary btn-sm btn-outline">Purchase</Link>
                                 </div>
                             </div>
                         </div>

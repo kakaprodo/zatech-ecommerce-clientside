@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='font-sans antialiased bg-gray-100'>
       <BrowserRouter>
         <AppRoute />
       </BrowserRouter>
