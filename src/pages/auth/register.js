@@ -39,8 +39,8 @@ const RegisterPage = () => {
                     </div>
                     <div className='divider'>Or</div>
                     <div className='flex place-content-center'>
-                        <span>You don't have an account, then </span>
-                        <Link className="text-primary pl-3" to={RouteName.INDEX} >Login</Link>
+                        <span>If you have an account, then </span>
+                        <Link className="text-primary pl-3" to={RouteName.LOGIN} >Login</Link>
                     </div>
                 </div>
             </div>
