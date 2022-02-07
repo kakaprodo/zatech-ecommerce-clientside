@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RouteName from '../../utility/route-names';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+    const navigate = useNavigate();
+
+    const login = () => {
+        navigate(RouteName.USER_PROFILE);
+    }
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -23,7 +28,7 @@ const LoginPage = () => {
                         <input type="text" placeholder="password" className="input input-bordered" />
                     </div>
                     <div className="form-control mt-6">
-                        <input type="button" value="Login" className="btn btn-primary" />
+                        <button type="button" onClick={login} className="btn btn-primary">Login </button>
                     </div>
                     <div className='divider'>Or</div>
                     <div className='flex place-content-center'>
