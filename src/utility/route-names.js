@@ -1,5 +1,6 @@
 const RouteName = {
     INDEX: '/',
+    LOGIN: 'login',
     REGISTER: 'register'
 }
 
