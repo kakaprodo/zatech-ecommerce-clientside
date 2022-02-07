@@ -1,11 +1,13 @@
+import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+import AppRoute from "./pages/app-route";
 import './App.css';
 
 function App() {
   return (
-    <h1 className="text-xl font-bold underline">
-      Hello world!
-      <button className="btn btn-primary">Nice</button>
-    </h1>
+    <BrowserRouter>
+      <AppRoute />
+    </BrowserRouter>
   );
 }
 
