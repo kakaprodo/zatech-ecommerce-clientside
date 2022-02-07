@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Config from '../../utility/config';
 import RouteName from '../../utility/route-names';
 import AuthNav from './auth-nav-content';
@@ -11,11 +11,13 @@ const Nav = (props) => {
         auth = false
     } = props;
 
+    const navigate = useNavigate();
+
     return (
         <div className='fixed top-0 left-0 right-0 z-50'>
             <div className="navbar mb-2 shadow-lg bg-white text-neutral rounded-none">
                 <div className="flex-1 px-2 mx-2">
-                    <span className="text-lg font-bold">
+                    <span onClick={() => navigate(RouteName.INDEX)} className="text-lg font-bold hover:cursor-pointer">
                         {Config.AppName}
                     </span>
                 </div>

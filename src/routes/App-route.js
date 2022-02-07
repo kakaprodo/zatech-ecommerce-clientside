@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import RouteName from './utility/route-names';
-import LoginPage from './pages/auth/login';
-import RegisterPage from './pages/auth/register';
-import WelcomePage from './pages/welcome';
-import SingleProductPage from './pages/products/single-product';
-import UserProfilePage from './pages/users/user-profile';
+import RouteName from '../utility/route-names';
+import LoginPage from '../pages/auth/login';
+import RegisterPage from '../pages/auth/register';
+import WelcomePage from '../pages/welcome';
+import SingleProductPage from '../pages/products/single-product';
+import UserProfilePage from '../pages/users/user-profile';
 
 const AppRoute = () => {
     return (
