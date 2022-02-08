@@ -42,7 +42,7 @@ const ProfileHeader = (props) => {
                             </div>
                             <div className="stat place-items-center place-content-center">
                                 <div className="stat-title">Purchases</div>
-                                <div className="stat-value">3</div>
+                                <div className="stat-value">{authUser?.purchases_count || 0}</div>
                             </div>
                             <div className="stat place-items-center place-content-center">
                                 <div className="stat-title">Topup your account</div> <br />
