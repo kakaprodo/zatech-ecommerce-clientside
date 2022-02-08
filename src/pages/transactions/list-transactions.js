@@ -40,9 +40,9 @@ const ListTransactionPage = () => {
             </div>
             <div className='grid grid-cols-2 gap-5'>
                 {
-                    transactions.map((transaction) => {
+                    transactions.map((transaction, index) => {
                         return (
-                            <div className="card lg:card-side card-bordered shadow-md">
+                            <div key={index + 'transaction'} className="card lg:card-side card-bordered shadow-md">
                                 <div className="card-body flex-row justify-between">
                                     <div>
                                         <h2 className="text-lg">{transaction.description}</h2>
