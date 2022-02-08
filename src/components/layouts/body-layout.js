@@ -5,15 +5,23 @@ import Nav from '../nav/nav';
 const BodyLayout = (props) => {
 
     const {
-        children
+        children,
     } = props;
 
-    const [authUser, setAuthUser] = useState(null);
+    const [authUser, setAuthUser] = useState();
 
     useEffect(() => {
         if (authUser) return;
-        setAuthUser(Sh.getAuthUser());
+
+        setUser();
+
     }, [authUser]);
+
+    const setUser = async () => {
+        const user = await Sh.getAuthUser();
+
+        setAuthUser(user);
+    }
 
     return (
         <>
