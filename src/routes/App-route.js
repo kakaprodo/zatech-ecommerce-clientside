@@ -13,7 +13,7 @@ const AppRoute = () => {
             <Route path={RouteName.INDEX} element={<WelcomePage />} />
             <Route path={RouteName.LOGIN} element={<LoginPage />} />
             <Route path={RouteName.REGISTER} element={<RegisterPage />} />
-            <Route path={RouteName.SINGLE_PRODUCT} element={<SingleProductPage />} />
+            <Route path={`${RouteName.SINGLE_PRODUCT}/:productId`} element={<SingleProductPage />} />
             <Route path={RouteName.USER_PROFILE} element={<UserProfilePage />} />
         </Routes>
     );

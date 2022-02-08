@@ -21,7 +21,7 @@ const WelcomePage = () => {
     }, [products]);
 
     const fetchProducts = async (onSuccess, onError) => {
-        const resp = await http.get('all-products');
+        const resp = await http.get('products');
 
         if (resp.status !== 200) return onError();
 

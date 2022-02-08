@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RouteName from '../../utility/route-names';
 
 const ListProduct = (props) => {
@@ -12,7 +12,10 @@ const ListProduct = (props) => {
             {
                 products.map((product, index) => {
                     return (
-                        <div key={index + 'product'} className="card card-bordered shadow-md">
+                        <div
+                            key={index + 'product'}
+                            className="card card-bordered shadow-md"
+                        >
                             <figure>
                                 <img src="https://picsum.photos/id/1005/400/250" alt="product" />
                             </figure>
@@ -21,7 +24,12 @@ const ListProduct = (props) => {
                                 <p>{product.price}$</p>
                                 <p>{product.discount}% of Discount</p>
                                 <div className="my-3">
-                                    <Link to={RouteName.SINGLE_PRODUCT} className="btn btn-primary btn-sm btn-outline">Purchase</Link>
+                                    <Link
+                                        to={`${RouteName.SINGLE_PRODUCT}/${product.id}`}
+                                        className="btn btn-primary btn-sm btn-outline"
+                                    >
+                                        Purchase
+                                    </Link>
                                 </div>
                             </div>
                         </div>
