@@ -30,8 +30,8 @@ const ListTransactionPage = () => {
 
 
     return (
-        <div>
-            <div className='py-5'>
+        <div className='bg-gray-50 p-5'>
+            <div className='divider'>
                 <p className="text-xl">Transaction list</p>
             </div>
             <div className='grid grid-cols-2 gap-5'>
