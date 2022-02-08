@@ -13,9 +13,18 @@ const UserProfilePage = () => {
         setAuthUser(Sh.getAuthUser());
     }, [authUser]);
 
+    const refreshUserData = async () => {
+
+        await Sh.setAuthUser();
+
+        const user = await Sh.getAuthUser();
+
+        setAuthUser(user);
+    }
+
     return (
         <BodyLayout>
-            <ProfileHeader authUser={authUser} />
+            <ProfileHeader authUser={authUser} refreshUserData={refreshUserData} />
             <UserProfileRoute />
         </BodyLayout>
     );
