@@ -24,7 +24,7 @@ const UserProfilePage = () => {
     }
 
     return (
-        <BodyLayout>
+        <BodyLayout user={authUser}>
             <ProfileHeader authUser={authUser} refreshUserData={refreshUserData} />
             <UserProfileRoute />
         </BodyLayout>

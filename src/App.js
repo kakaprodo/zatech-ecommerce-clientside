@@ -2,10 +2,14 @@ import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import AppRoute from "./routes/App-route";
 import './App.css';
+import useAxiosResponeStatus from './custom_hooks/use-axios-response-status';
 
 function App() {
+  const { ErrorContainer } = useAxiosResponeStatus();
+
   return (
-    <div className='font-sans antialiased bg-gray-100'>
+    <div className='font-sans antialiased bg-gray-100 pt-20'>
+      <ErrorContainer />
       <BrowserRouter>
         <AppRoute />
       </BrowserRouter>
