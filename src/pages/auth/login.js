@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import http from '../../utility/http-client';
 import RouteName from '../../utility/route-names';
 import Sh from '../../utility/shared-helper';
 
 const LoginPage = (props) => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -16,9 +15,9 @@ const LoginPage = (props) => {
 
         if (resp.status !== 200) return;
 
-        Sh.saveAuthToken(resp.data.token);
+        await Sh.saveAuthToken(resp.data.token);
 
-        navigate(RouteName.USER_PROFILE);
+        window.location.href = Sh.appBaseUlr() + RouteName.USER_PROFILE;
     }
 
     return (
