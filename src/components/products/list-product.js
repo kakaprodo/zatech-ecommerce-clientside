@@ -1,41 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import RouteName from '../../utility/route-names';
 
-const ListProduct = () => {
+const ListProduct = (props) => {
 
-    let products = [
-        {
-            name: 'Bugger',
-            price: 44,
-            discount: 0,
-        },
-        {
-            name: 'COCA',
-            price: 200,
-            discount: 2,
-        },
-        {
-            name: 'pant',
-            price: 112,
-            discount: 0,
-        },
-        {
-            name: 'Shoes',
-            price: 300,
-            discount: 1,
-        }
-    ];
-
-    products = [...products, ...products];
+    const { products } = props;
 
     return (
 
         <div className='grid grid-cols-4 gap-5'>
             {
-                products.map((product) => {
+                products.map((product, index) => {
                     return (
-                        <div className="card card-bordered shadow-md">
+                        <div
+                            key={index + 'product'}
+                            className="card card-bordered shadow-md"
+                        >
                             <figure>
                                 <img src="https://picsum.photos/id/1005/400/250" alt="product" />
                             </figure>
@@ -44,7 +24,12 @@ const ListProduct = () => {
                                 <p>{product.price}$</p>
                                 <p>{product.discount}% of Discount</p>
                                 <div className="my-3">
-                                    <Link to={RouteName.SINGLE_PRODUCT} className="btn btn-primary btn-sm btn-outline">Purchase</Link>
+                                    <Link
+                                        to={`${RouteName.SINGLE_PRODUCT}/${product.id}`}
+                                        className="btn btn-primary btn-sm btn-outline"
+                                    >
+                                        Purchase
+                                    </Link>
                                 </div>
                             </div>
                         </div>
