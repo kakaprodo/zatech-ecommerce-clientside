@@ -11,6 +11,7 @@ const UserProfilePage = () => {
     useEffect(() => {
         if (authUser) return;
         setAuthUser(Sh.getAuthUser());
+        refreshUserData();
     }, [authUser]);
 
     const refreshUserData = async () => {
