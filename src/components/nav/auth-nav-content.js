@@ -15,6 +15,10 @@ const AuthNav = (props) => {
 
     return (
         <>
+            <div className="lex-none mx-3 hover:cursor-pointer">
+                <Link to={RouteName.INDEX}>Products</Link>
+            </div>
+
             <div className="dropdown dropdown-end flex-none mx-3 hover:cursor-pointer">
                 <div tabIndex="0" className="avatar placeholder">
                     <div className="bg-indigo-300 text-neutral-content rounded-full w-10 h-10">
