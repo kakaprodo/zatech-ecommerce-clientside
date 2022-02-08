@@ -2,6 +2,8 @@ import http from "./http-client";
 import dateFormat from "dateformat";
 
 const Sh = {
+    DISCOUNT_RULE_BETWEEN: 'between',
+    DISCOUNT_RULE_ABOVE_MAX: 'above_max',
     saveAuthToken: function (token) {
         this.storageAdd('token', token);
         this.setAuthUser(token);
@@ -46,6 +48,35 @@ const Sh = {
 
         return value.length === 0;
     },
+    // Discount in percentage
+    findDiscount: function (price, discountSettings = []) {
+
+        const appropriateDiscount = discountSettings.filter((discount) => {
+            const priceMatches = this.priceMatchDiscountRule(price, discount);
+
+            return priceMatches;
+        }).shift();
+
+        return Number(appropriateDiscount?.value || 0);
+    },
+    priceMatchDiscountRule: function (price, discount = {}) {
+        const minPrice = discount.min_price;
+        const maxPrice = discount.max_price;
+
+        return {
+            [this.DISCOUNT_RULE_BETWEEN]: () => {
+                if (price >= minPrice && price <= maxPrice) return true;
+
+                return false;
+            },
+            [this.DISCOUNT_RULE_ABOVE_MAX]: () => {
+
+                if (price > maxPrice) return true;
+
+                return false;
+            }
+        }[discount.rule]();
+    }
 };
 
 export default Sh;

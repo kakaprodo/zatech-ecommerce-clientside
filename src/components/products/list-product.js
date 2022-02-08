@@ -21,8 +21,7 @@ const ListProduct = (props) => {
                             </figure>
                             <div className="card-body p-3">
                                 <h2 className="card-title">{product.name} </h2>
-                                <p>{product.price}$</p>
-                                <p>{product.discount}% of Discount</p>
+                                <p>Price: {product.price}$</p>
                                 <div className="my-3">
                                     <Link
                                         to={`${RouteName.SINGLE_PRODUCT}/${product.id}`}
