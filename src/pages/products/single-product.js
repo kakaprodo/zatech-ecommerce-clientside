@@ -68,7 +68,7 @@ const SingleProductPage = () => {
             {!product ? productLodingContent() :
                 <div className="card lg:card-side card-bordered shadow-md">
                     <figure>
-                        <img src="https://picsum.photos/id/1005/400/250" alt="single product" />
+                        <img src={product.image} alt="single product" />
                     </figure>
                     <div className="card-body space-y-2 py-3">
                         <h2 className="card-title">{product.name} </h2>

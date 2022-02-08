@@ -17,7 +17,7 @@ const ListProduct = (props) => {
                             className="card card-bordered shadow-md"
                         >
                             <figure>
-                                <img src="https://picsum.photos/id/1005/400/250" alt="product" />
+                                <img src={product.image} alt="product" className="h-56" />
                             </figure>
                             <div className="card-body p-3">
                                 <h2 className="card-title">{product.name} </h2>
