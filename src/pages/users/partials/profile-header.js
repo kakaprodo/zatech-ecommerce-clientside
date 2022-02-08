@@ -1,6 +1,10 @@
 import React from 'react';
 
-const ProfileHeader = () => {
+const ProfileHeader = (props) => {
+    const {
+        authUser
+    } = props;
+
     return (
         <div>
             <div className="card lg:card-side card-bordered shadow-none ">
@@ -12,13 +16,13 @@ const ProfileHeader = () => {
                     </div>
                 </div>
                 <div className="card-body py-3 ">
-                    <h2 className="card-title">Promesse Kayenga </h2>
-                    <p>prodo45@gmail.com</p>
+                    <h2 className="card-title">{authUser?.name} </h2>
+                    <p>{authUser?.email}</p>
                     <div>
                         <div className="w-full shadow stats">
                             <div className="stat place-items-center place-content-center">
                                 <div className="stat-title">Account Balance</div>
-                                <div className="stat-value">310 $</div>
+                                <div className="stat-value">{authUser?.balance} $</div>
                             </div>
                             <div className="stat place-items-center place-content-center">
                                 <div className="stat-title">Purchases</div>
@@ -38,8 +42,8 @@ const ProfileHeader = () => {
                 </div>
             </div>
             <div className="tabs mt-5">
-                <a className="tab tab-lg tab-lifted tab-active">Transactions</a>
-                <a className="tab tab-lg tab-lifted">Purchases</a>
+                <span className="tab tab-lg tab-lifted tab-active">Transactions</span>
+                <span className="tab tab-lg tab-lifted">Purchases</span>
             </div>
 
         </div>

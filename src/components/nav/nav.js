@@ -8,7 +8,8 @@ import GuestNav from './guest-nav-content';
 const Nav = (props) => {
 
     const {
-        auth = false
+        auth = false,
+        authUser
     } = props;
 
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Nav = (props) => {
                     </span>
                 </div>
                 {
-                    auth ? <AuthNav /> : <GuestNav />
+                    auth ? <AuthNav {...props} /> : <GuestNav {...props} />
                 }
             </div>
         </div>

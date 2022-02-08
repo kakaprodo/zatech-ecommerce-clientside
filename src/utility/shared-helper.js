@@ -23,6 +23,18 @@ const Sh = {
     },
     storageGet: (key) => {
         return localStorage.getItem(key);
+    },
+    storageDelete: (key) => {
+        return localStorage.removeItem(key);
+    },
+    logoutUser: function () {
+        this.storageDelete('token');
+        this.storageDelete('user');
+
+        window.location.href = '/';
+    },
+    appBaseUlr: () => {
+        return window.location.protocol + '//' + window.location.host;
     }
 };
 

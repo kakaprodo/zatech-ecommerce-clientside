@@ -6,7 +6,6 @@ import Sh from '../../utility/shared-helper';
 
 const RegisterPage = () => {
 
-    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -22,9 +21,9 @@ const RegisterPage = () => {
 
         if (resp.status !== 200) return;
 
-        Sh.saveAuthToken(resp.data.token);
+        await Sh.saveAuthToken(resp.data.token);
 
-        navigate(RouteName.USER_PROFILE);
+        window.location.href = Sh.appBaseUlr() + RouteName.USER_PROFILE;
     }
 
     return (
