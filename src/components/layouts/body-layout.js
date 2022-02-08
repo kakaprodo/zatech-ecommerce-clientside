@@ -18,7 +18,7 @@ const BodyLayout = (props) => {
     return (
         <>
             <Nav auth={authUser} authUser={authUser} />
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white py-10 mb-10 mt-20">
+            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white py-10 mb-10">
 
                 {children}
             </div>

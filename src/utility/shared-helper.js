@@ -39,7 +39,13 @@ const Sh = {
     },
     dateFormat: (date, format = 'dddd, mmmm dS, yyyy, h:MM TT') => {
         return dateFormat(date, format);
-    }
+    },
+    isEmpty: (value) => {
+
+        if (!value) return true;
+
+        return value.length === 0;
+    },
 };
 
 export default Sh;
