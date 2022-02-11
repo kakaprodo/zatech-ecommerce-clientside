@@ -19,7 +19,7 @@ const RegisterPage = () => {
             password_confirmation: passwordConfirmation
         })
 
-        if (resp.status !== 200) return;
+        if (resp.status !== 201) return;
 
         await Sh.saveAuthToken(resp.data.token);
 
