@@ -56,7 +56,7 @@ const WelcomePage = () => {
             <div className="max-w-xl mx-auto lg:flex-none">
                 <form onSubmit={searchProduct}>
                     <div className="form-control">
-                        <div class="relative">
+                        <div className="relative">
                             <input
                                 type="text"
                                 placeholder="Search for a product very quick here"

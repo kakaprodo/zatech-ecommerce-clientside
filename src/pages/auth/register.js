@@ -11,7 +11,9 @@ const RegisterPage = () => {
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
-    const register = async () => {
+    const register = async (e) => {
+        e.preventDefault();
+
         const resp = await http.post('register', {
             name,
             email,
@@ -32,64 +34,65 @@ const RegisterPage = () => {
             <div className="card w-full max-w-lg card-bordered shadow-md bg-white">
                 <div className='card-body'>
                     <span className='card-title'>Register</span>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Name</span>
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            className="input input-bordered"
-                            onChange={(e) => setName(e.target.value)}
-                            value={name}
-                        />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input
-                            type="email"
-                            required
-                            placeholder="email"
-                            className="input input-bordered"
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
-                        />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Password</span>
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="password"
-                            className="input input-bordered"
-                            onChange={(e) => setPassword(e.target.value)}
-                            value={password}
-                        />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Confirm password</span>
-                        </label>
-                        <input
-                            type="text"
-                            placeholder="Confirm password"
-                            className="input input-bordered"
-                            onChange={(e) => setPasswordConfirmation(e.target.value)}
-                            value={passwordConfirmation}
-                        />
-                    </div>
-                    <div className="form-control mt-6">
-                        <button
-                            type="button"
-                            className="btn btn-primary"
-                            onClick={register}
-                        >
-                            Register
-                        </button>
-                    </div>
+                    <form onSubmit={register}>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Name"
+                                className="input input-bordered"
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Email</span>
+                            </label>
+                            <input
+                                type="email"
+                                required
+                                placeholder="email"
+                                className="input input-bordered"
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Password</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="password"
+                                className="input input-bordered"
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Confirm password</span>
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="Confirm password"
+                                className="input input-bordered"
+                                onChange={(e) => setPasswordConfirmation(e.target.value)}
+                                value={passwordConfirmation}
+                            />
+                        </div>
+                        <div className="form-control mt-6">
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                            >
+                                Register
+                            </button>
+                        </div>
+                    </form>
                     <div className='divider'>Or</div>
                     <div className='flex place-content-center'>
                         <span>If you have an account, then </span>
