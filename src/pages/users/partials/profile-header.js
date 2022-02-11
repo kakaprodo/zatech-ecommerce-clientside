@@ -16,7 +16,7 @@ const ProfileHeader = (props) => {
             amount: topupAmount
         });
 
-        if (resp.status !== 200) return;
+        if (resp.status !== 201) return;
         setTopupAmount('');
         refreshUserData();
     }

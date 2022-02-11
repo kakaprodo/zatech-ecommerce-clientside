@@ -56,7 +56,7 @@ const SingleProductPage = () => {
             quantity
         });
 
-        if (resp.status !== 200) return setIsLoading(false);
+        if (resp.status !== 201) return setIsLoading(false);
 
         setIsLoading(false);
 
