@@ -8,10 +8,10 @@ clone the repository from github then you can follow the steps below:
 npm install
 ```
 
-then start the project
+then start the server
 
 ```
 npm start
 ```
 
-Note: by default the app is consuming api on `http://localhost:8000`, in case you may need to change the port, you can in `/src/utility/config.js`
+Note: Please remember to create a file called `.env` in the root folder, then copy all keys from the `.example.env` file which is located in the root folder also, and paste them in the `.env` file, then from there you can customize all the values as you want.

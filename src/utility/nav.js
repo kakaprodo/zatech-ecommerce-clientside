@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Config from '../../utility/config';
 import RouteName from '../../utility/route-names';
 import AuthNav from './auth-nav-content';
 import GuestNav from './guest-nav-content';
