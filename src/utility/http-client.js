@@ -1,10 +1,9 @@
 import axios from "axios";
-import Config from "./config";
 import { AppEvent } from "./event";
 import ReducerAction from "./reducer-actions";
 import Sh from "./shared-helper";
 
-const http = axios.create({ baseURL: Config.API_BASE_URL })
+const http = axios.create({ baseURL: process.env.REACT_APP_API_BASE_URL })
 
 http.interceptors.request.use(async (config) => {
     const token = await Sh.storageGet('token');
