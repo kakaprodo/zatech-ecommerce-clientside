@@ -39,7 +39,7 @@ const Sh = {
     appBaseUlr: () => {
         return window.location.protocol + '//' + window.location.host;
     },
-    dateFormat: (date, format = 'dddd, mmmm dS, yyyy, h:MM TT') => {
+    dateFormat: (date, format = 'mmm dS yyyy, h:MM TT') => {
         return dateFormat(date, format);
     },
     isEmpty: (value) => {

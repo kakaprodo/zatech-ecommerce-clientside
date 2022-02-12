@@ -74,10 +74,7 @@ const ProfileHeader = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="tabs mt-5">
-                <span className="tab tab-lg tab-lifted tab-active">Transactions</span>
-                <span className="tab tab-lg tab-lifted">Purchases</span>
-            </div>
+
 
         </div>
     );

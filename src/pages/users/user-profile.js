@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import BodyLayout from '../../components/layouts/body-layout';
-import UserProfileRoute from '../../routes/profile-route';
 import Sh from '../../utility/shared-helper';
 import ProfileHeader from './partials/profile-header';
+import UserTabs from './partials/user-tabs';
 
 const UserProfilePage = () => {
 
@@ -27,7 +27,10 @@ const UserProfilePage = () => {
     return (
         <BodyLayout user={authUser}>
             <ProfileHeader authUser={authUser} refreshUserData={refreshUserData} />
-            <UserProfileRoute />
+
+            <UserTabs />
+
+
         </BodyLayout>
     );
 }
