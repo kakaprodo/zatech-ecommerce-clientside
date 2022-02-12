@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Api from '../../utility/api-helper';
+import Sh from '../../utility/shared-helper';
 
 const UserPurchaseList = (props) => {
 
@@ -41,9 +42,9 @@ const UserPurchaseList = (props) => {
                                     <p>Price: {purchase.price}$</p>
                                     <p>Quantity: {purchase.quantity}</p>
                                     <p>Discount: {purchase.discount}% </p>
-                                    <p>Discount amount:{purchase.discount_amount}$</p>
+                                    <p>Discount amount: {purchase.discount_amount}$</p>
                                     <p>Total: {purchase.total}$</p>
-                                    <p>created on: {purchase.created_at}</p>
+                                    <small>created on: {Sh.dateFormat(purchase.created_at)}</small>
                                 </div>
                             </div>
                         )
