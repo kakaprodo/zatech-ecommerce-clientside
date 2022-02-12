@@ -30,11 +30,11 @@ const ListTransactionPage = () => {
 
 
     return (
-        <div className='bg-gray-50 p-5'>
+        <div className='bg-gray-50 p-0 sm:p-5'>
             <div className='divider'>
                 <p className="text-xl">Transaction list</p>
             </div>
-            <div className='grid grid-cols-2 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                 {
                     !transactions.length && <span>You haven't yet perform any transaction</span>
                 }
