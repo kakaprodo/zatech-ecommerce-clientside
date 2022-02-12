@@ -6,9 +6,10 @@ const BodyLayout = (props) => {
 
     const {
         children,
+        user: existingUser
     } = props;
 
-    const [authUser, setAuthUser] = useState();
+    const [authUser, setAuthUser] = useState(null);
 
     useEffect(() => {
         if (authUser) return;
@@ -25,8 +26,8 @@ const BodyLayout = (props) => {
 
     return (
         <>
-            <Nav auth={authUser} authUser={authUser} />
-            <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-white py-10 mb-10">
+            <Nav auth={existingUser || authUser} authUser={existingUser || authUser} />
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 bg-white py-10 mb-10">
 
                 {children}
             </div>

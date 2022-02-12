@@ -29,7 +29,11 @@ const useAxiosResponeStatus = () => {
         return (
             <div className="alert alert-error">
                 <div className="flex-1">
-                    <label>{errorMessage}</label>
+                    <label>{
+                        errorStatus === 401
+                            ? 'Please, you need to login for making that actiion'
+                            : errorMessage
+                    }</label>
                 </div>
             </div>
         );

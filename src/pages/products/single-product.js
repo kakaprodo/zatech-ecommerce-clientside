@@ -51,12 +51,12 @@ const SingleProductPage = () => {
 
     const confirmPurchase = async () => {
         setIsLoading(true);
-        const resp = await http.post('purchase-product', {
+        const resp = await http.post('purchases', {
             product_id: product.id,
             quantity
         });
 
-        if (resp.status !== 200) return setIsLoading(false);
+        if (resp.status !== 201) return setIsLoading(false);
 
         setIsLoading(false);
 
@@ -79,7 +79,7 @@ const SingleProductPage = () => {
     return (
         <BodyLayout>
             {!product ? productLodingContent() :
-                <div className="card lg:card-side card-bordered shadow-md">
+                <div className="card md:card-side card-bordered shadow-sm rounded-none">
                     <figure>
                         <img src={product.image} alt="single product" className='h-64' />
                     </figure>
