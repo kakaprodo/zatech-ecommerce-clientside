@@ -79,7 +79,7 @@ const SingleProductPage = () => {
     return (
         <BodyLayout>
             {!product ? productLodingContent() :
-                <div className="card lg:card-side card-bordered shadow-md">
+                <div className="card md:card-side card-bordered shadow-sm rounded-none">
                     <figure>
                         <img src={product.image} alt="single product" className='h-64' />
                     </figure>
