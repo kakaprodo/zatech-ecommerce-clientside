@@ -6,7 +6,8 @@ const RouteName = {
     USER_PROFILE: '/user-profile',
 
     //profile pages
-    USER_TRANSACTIONS: '/'
+    USER_TRANSACTIONS: '/',
+    USER_PURCHASES: '/user-purchases'
 }
 
 export default RouteName;

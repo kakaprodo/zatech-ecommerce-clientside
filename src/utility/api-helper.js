@@ -17,9 +17,20 @@ const Api = {
 
         const products = resp.data.data;
 
-        onSuccess(resp.data.data);
+        onSuccess(products);
 
         return products;
+    },
+    fetchUserPruchases: async (onSuccess = () => { }, onError = () => { }) => {
+        const resp = await http.get('purchases');
+
+        if (resp.status !== 200) return onError();
+
+        const purchases = resp.data.data;
+
+        onSuccess(purchases);
+
+        return purchases;
     }
 }
 

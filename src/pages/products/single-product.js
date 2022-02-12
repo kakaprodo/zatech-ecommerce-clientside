@@ -51,7 +51,7 @@ const SingleProductPage = () => {
 
     const confirmPurchase = async () => {
         setIsLoading(true);
-        const resp = await http.post('purchase-product', {
+        const resp = await http.post('purchases', {
             product_id: product.id,
             quantity
         });
