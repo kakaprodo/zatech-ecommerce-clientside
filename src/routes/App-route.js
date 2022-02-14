@@ -6,15 +6,46 @@ import RegisterPage from '../pages/auth/register';
 import WelcomePage from '../pages/welcome';
 import SingleProductPage from '../pages/products/single-product';
 import UserProfilePage from '../pages/users/user-profile';
+import RequiredAuth from './middleware/required-auth';
+import IfAuthenticated from './middleware/if-unauthenticated';
 
 const AppRoute = () => {
     return (
         <Routes>
             <Route path={RouteName.INDEX} element={<WelcomePage />} />
-            <Route path={RouteName.LOGIN} element={<LoginPage />} />
-            <Route path={RouteName.REGISTER} element={<RegisterPage />} />
-            <Route path={`${RouteName.SINGLE_PRODUCT}/:productId`} element={<SingleProductPage />} />
-            <Route path={RouteName.USER_PROFILE} element={<UserProfilePage />} />
+            <Route
+                path={RouteName.LOGIN}
+                element={
+                    <IfAuthenticated>
+                        <LoginPage />
+                    </IfAuthenticated>
+                }
+            />
+            <Route
+                path={RouteName.REGISTER}
+                element={
+                    <IfAuthenticated>
+                        <RegisterPage />
+                    </IfAuthenticated>
+                }
+            />
+            <Route
+                path={`${RouteName.SINGLE_PRODUCT}/:productId`}
+                element={
+                    <RequiredAuth>
+                        <SingleProductPage />
+                    </RequiredAuth>
+                }
+            />
+            <Route
+                path={RouteName.USER_PROFILE}
+                element={
+                    <RequiredAuth>
+                        <UserProfilePage />
+                    </RequiredAuth>
+                }
+            />
+            <Route path="*" element={<p>Route not found</p>} />
         </Routes>
     );
 }
