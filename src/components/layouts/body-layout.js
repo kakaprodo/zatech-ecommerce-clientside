@@ -1,33 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import useAuth from '../../custom_hooks/useAuth';
 import Sh from '../../utility/shared-helper';
 import Nav from '../nav/nav';
 
 const BodyLayout = (props) => {
 
     const {
-        children,
-        user: existingUser
+        children
     } = props;
 
-    const [authUser, setAuthUser] = useState(null);
-
-    useEffect(() => {
-        if (authUser) return;
-
-        setUser();
-
-    }, [authUser]);
-
-    const setUser = async () => {
-        const user = await Sh.getAuthUser();
-
-        setAuthUser(user);
-    }
+    const {
+        user: authUser
+    } = useAuth();
 
     return (
         <>
-            <Nav auth={existingUser || authUser} authUser={existingUser || authUser} />
-            <div className="max-w-7xl mx-auto px-6 sm:px-8 bg-white py-10 mb-10">
+            <Nav auth={authUser} authUser={authUser} />
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 bg-white py-10 mb-10 mt-28">
 
                 {children}
             </div>

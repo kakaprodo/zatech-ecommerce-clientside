@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import http from '../../utility/http-client';
 import RouteName from '../../utility/route-names';
 import Sh from '../../utility/shared-helper';
@@ -7,6 +7,7 @@ import Sh from '../../utility/shared-helper';
 const LoginPage = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const login = async (e) => {
         e.preventDefault();
@@ -19,11 +20,11 @@ const LoginPage = (props) => {
 
         await Sh.saveAuthToken(resp.data.token);
 
-        window.location.href = Sh.appBaseUlr() + RouteName.USER_PROFILE;
+        navigate(RouteName.USER_PROFILE);
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen">
 
             <div className="card w-full max-w-lg card-bordered shadow-md bg-white">
                 <div className='card-body'>
@@ -47,7 +48,7 @@ const LoginPage = (props) => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="text"
+                                type="password"
                                 placeholder="password"
                                 className="input input-bordered"
                                 onChange={(e) => setPassword(e.target.value)}
