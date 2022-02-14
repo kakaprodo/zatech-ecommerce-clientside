@@ -8,7 +8,7 @@ function App() {
   const { ErrorContainer } = useAxiosResponeStatus();
 
   return (
-    <div className='font-sans antialiased bg-gray-100 pt-20'>
+    <div className='font-sans antialiased bg-gray-100'>
       <ErrorContainer />
       <BrowserRouter>
         <AppRoute />

@@ -4,9 +4,9 @@ import dateFormat from "dateformat";
 const Sh = {
     DISCOUNT_RULE_BETWEEN: 'between',
     DISCOUNT_RULE_ABOVE_MAX: 'above_max',
-    saveAuthToken: function (token) {
-        this.storageAdd('token', token);
-        this.setAuthUser(token);
+    saveAuthToken: async function (token) {
+        await this.storageAdd('token', token);
+        await this.setAuthUser(token);
 
     },
     setAuthUser: async function () {
@@ -16,10 +16,16 @@ const Sh = {
 
         this.storageAdd('user', JSON.stringify(resp.data.data));
     },
-    getAuthUser: function () {
-        const user = this.storageGet('user');
+    getAuthUser: function (onExists = () => { }, onNotExists = () => { }) {
+        let user = this.storageGet('user');
 
-        return user ? JSON.parse(user) : null;
+        user = user ? JSON.parse(user) : null;
+
+        if (!user) return onNotExists();
+
+        onExists(user)
+
+        return user;
     },
     storageAdd: (key, value) => {
         localStorage.setItem(key, value);
@@ -76,6 +82,9 @@ const Sh = {
                 return false;
             }
         }[discount.rule]();
+    },
+    redirectTo: (routeName) => {
+        window.location.href = Sh.appBaseUlr() + routeName;
     }
 };
 

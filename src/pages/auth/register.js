@@ -10,6 +10,7 @@ const RegisterPage = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
+    const navigate = useNavigate();
 
     const register = async (e) => {
         e.preventDefault();
@@ -25,7 +26,7 @@ const RegisterPage = () => {
 
         await Sh.saveAuthToken(resp.data.token);
 
-        window.location.href = Sh.appBaseUlr() + RouteName.USER_PROFILE;
+        navigate(RouteName.USER_PROFILE);
     }
 
     return (
@@ -65,7 +66,7 @@ const RegisterPage = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="text"
+                                type="password"
                                 placeholder="password"
                                 className="input input-bordered"
                                 onChange={(e) => setPassword(e.target.value)}
@@ -77,7 +78,7 @@ const RegisterPage = () => {
                                 <span className="label-text">Confirm password</span>
                             </label>
                             <input
-                                type="text"
+                                type="password"
                                 placeholder="Confirm password"
                                 className="input input-bordered"
                                 onChange={(e) => setPasswordConfirmation(e.target.value)}
