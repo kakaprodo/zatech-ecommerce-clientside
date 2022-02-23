@@ -34,7 +34,7 @@ const useAxiosResponeStatus = () => {
 
     const simpleAlertmessage = () => {
         return (
-            <div className="alert alert-error">
+            <div className="">
                 <div className="flex-1">
                     <label>{
                         errorStatus === 401
