@@ -31,11 +31,7 @@ const AppRoute = () => {
             />
             <Route
                 path={`${RouteName.SINGLE_PRODUCT}/:productId`}
-                element={
-                    <RequiredAuth>
-                        <SingleProductPage />
-                    </RequiredAuth>
-                }
+                element={<SingleProductPage />}
             />
             <Route
                 path={RouteName.USER_PROFILE}
