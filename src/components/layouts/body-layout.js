@@ -14,13 +14,13 @@ const BodyLayout = (props) => {
     } = useAuth();
 
     return (
-        <>
+        <div class="pt-28">
             <Nav auth={authUser} authUser={authUser} />
-            <div className="max-w-7xl mx-auto px-6 sm:px-8 bg-white py-10 mb-10 mt-28">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 bg-white py-10 mb-10">
 
                 {children}
             </div>
-        </>
+        </div>
 
     );
 }
